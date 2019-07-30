@@ -4,6 +4,10 @@
     l_check_bricks: true
   when: glusterfs_is_native
 
+- block:
+  - import_tasks: version_check.yml
+  - import_tasks: upgrade_version_check.yml
+
 - import_tasks: heketi_set_cli.yml
   when: glusterfs_heketi_is_native
 
